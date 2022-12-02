@@ -1,4 +1,4 @@
-clue = open('d02.txt', 'r').read()
+clue = open('02.txt', 'r').read()
 
 l = [tuple(x.split(' ')) for x in clue.split('\n')]
 
@@ -53,5 +53,5 @@ for a, b in l:
     elif b == 'Z':  # win
         sum_v2 += win + winners[map[a]]
 
-print(f'Incorrect strategy guide: {sum_v1}')
-print(f'Correct strategy guide: {sum_v2}')
+print(f'Score with incorrect strategy guide: {sum_v1}')
+print(f'Score with correct strategy guide: {sum_v2}')
