@@ -18,6 +18,5 @@ print('(1): Time:', time.time() - start)
 start = time.time()
 total_2 = sum(any(x in b for x in a)
               for a, b in assignments_ranges)
-
 print('(2): Amount of overlapping work:', total_2)
 print('(2): Time:', time.time() - start)
