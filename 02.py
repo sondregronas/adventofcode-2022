@@ -41,7 +41,6 @@ for a, b in l:
     else:
         sum_v1 += map[b] + loss  # everything else is a loss
 
-
 # version 2
 sum_v2 = 0
 

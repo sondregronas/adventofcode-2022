@@ -1,6 +1,7 @@
 import re
 
 clue = open('inputs/05.txt', 'r').read()
+
 cargo_ship = clue.split('\n\n')[0]
 instructions = clue.split('\n\n')[1]
 # Create a list for cranes 1-9
