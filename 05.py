@@ -29,13 +29,12 @@ for instruction in instructions.split('\n'):
     for _ in range(amount):
         crate_stacks[target] += crate_stacks[stack][-1]
         crate_stacks[stack] = crate_stacks[stack][:-1]
-
-top_text = ''.join([crate_stacks[x][-1] for x in crate_stacks])
-print(f'1: The top crates now read: "{top_text}"')
+print(f'1: The top crates now read: "{"".join([crate_stacks[x][-1] for x in crate_stacks])}"')
 print(f'1: Time taken: {time.time() - start}s')
 
+
 # Part 2:
-# The crane now moves multiple crates at once
+# The crane now moves multiple crates at once!
 crate_stacks = original_stacks
 start = time.time()
 for instruction in instructions.split('\n'):
@@ -44,7 +43,5 @@ for instruction in instructions.split('\n'):
     # Move the top <amount> of crates from assigned stack to the target stack
     crate_stacks[target] += crate_stacks[stack][-amount:]
     crate_stacks[stack] = crate_stacks[stack][:-amount]
-
-top_text = ''.join([crate_stacks[x][-1] for x in crate_stacks])
-print(f'2: The top crates now read: "{top_text}"')
+print(f'2: The top crates now read: "{"".join([crate_stacks[x][-1] for x in crate_stacks])}"')
 print(f'2: Time taken: {time.time() - start}s')
