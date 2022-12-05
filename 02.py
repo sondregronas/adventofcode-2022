@@ -1,4 +1,4 @@
-clue = open('02.txt', 'r').read()
+clue = open('inputs/02.txt', 'r').read()
 
 l = [tuple(x.split(' ')) for x in clue.split('\n')]
 
