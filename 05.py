@@ -4,15 +4,14 @@ clue = open('inputs/05.txt', 'r').read()
 
 cargo_ship = clue.split('\n\n')[0]
 instructions = clue.split('\n\n')[1]
-# Create a list for cranes 1-9
 crate_stacks = {crane: '' for crane in range(1, 10)}
 
 # Decipher rows of cargo ship and add to crate_stacks, bottom to top
 for row in cargo_ship.split('\n'):
     crane = 1
     for i in range(0, len(row), 4):
-        if '[' in row[i:i + 3]:
-            crate_stacks[crane] = row[i:i + 3][1] + crate_stacks[crane]
+        if '[' == row[i]:
+            crate_stacks[crane] = row[i+1] + crate_stacks[crane]
         crane += 1
 # Create an original copy of crate_stacks
 original_stacks = dict(crate_stacks)
