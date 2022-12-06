@@ -1,6 +1,6 @@
-clue = open('inputs/02.txt', 'r').read()
+puzzle = open('input.txt', 'r').read()
 
-l = [tuple(x.split(' ')) for x in clue.split('\n')]
+l = [tuple(x.split(' ')) for x in puzzle.split('\n')]
 
 rock = 1
 paper = 2

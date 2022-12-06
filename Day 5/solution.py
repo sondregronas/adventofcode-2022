@@ -1,9 +1,9 @@
 import re
 
-clue = open('inputs/05.txt', 'r').read()
+puzzle = open('input.txt', 'r').read()
 
-cargo_ship = clue.split('\n\n')[0]
-instructions = clue.split('\n\n')[1]
+cargo_ship = puzzle.split('\n\n')[0]
+instructions = puzzle.split('\n\n')[1]
 crate_stacks = {crane: '' for crane in range(1, 10)}
 
 # Decipher rows of cargo ship and add to crate_stacks, bottom to top

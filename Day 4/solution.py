@@ -1,6 +1,6 @@
-clue = open('inputs/04.txt', 'r').read()
+puzzle = open('input.txt', 'r').read()
 
-assignment_pairs = [x for x in clue.split('\n')]
+assignment_pairs = [x for x in puzzle.split('\n')]
 assignments = [x.split(',') for x in assignment_pairs]
 assignments_ranges = [[range(int(x.split('-')[0]), int(x.split('-')[1])+1) for x in y] for y in assignments]
 

@@ -1,10 +1,10 @@
-clue = open('inputs/03.txt', 'r').read()
+puzzle = open('input.txt', 'r').read()
 
 # 1
 # priorities: a-Z have values 1-52
 priorities = {letter: i+1 for i, letter in enumerate('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')}
 # rucksacks: contains objects represented by a-Z
-rucksacks = [x for x in clue.split('\n')]
+rucksacks = [x for x in puzzle.split('\n')]
 # compartments: split all rucksacks into two equal compartments
 compartments = [(rucksack[:len(rucksack) // 2], rucksack[len(rucksack) // 2:]) for rucksack in rucksacks]
 
