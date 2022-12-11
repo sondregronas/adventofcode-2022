@@ -1,9 +1,9 @@
 import math
 from dataclasses import dataclass
 
-# Modulus_factor is the product of all the test_divisble_by values for all monkeys
+# Modulus_factor is the product of all the divisble_by values for all monkeys
 # We need this to reduce the size of the numbers we're working with to avoid overflow
-# For now it starts as 1, but we'll multiply it by the test_divisble_by values for each monkey
+# For now it starts as 1, but we'll multiply it by the divisble_by values for each monkey
 # as we instantiate them.
 modulus_factor = 1
 
@@ -20,7 +20,7 @@ class Monkey:
 
     def __post_init__(self):
         global modulus_factor
-        # Multiply the modulus factor by the test_divisble_by value in order to get the common modulus
+        # Multiply the modulus factor by the divisble_by value in order to get the common modulus
         # This is done to prevent the worry level from getting too high
         modulus_factor *= self.divisble_by
 
@@ -29,7 +29,7 @@ class Monkey:
         Inspect the items, increasing the count of items inspected and modifying the worry level.
         If div_by_3 is True, then the worry level gets divided by 3.
         We also use a modulus to prevent the worry level from ever getting too high, this is done by
-        dividing the worry level by the modulus factor (the product of all the test_divisble_by values)
+        dividing the worry level by the modulus factor (the product of all the divisble_by values)
         """
         global modulus_factor
         # Increase the count of items inspected
@@ -91,11 +91,11 @@ def instantiate_monkeys():
     for monkey in open('input.txt', 'r').read().split('\n\n'):
         items = monkey.split('\n')[1].split('Starting items: ')[1].split(', ')
         operation = monkey.split('\n')[2].split('Operation: new = ')[1]
-        test_divisble_by = int(monkey.split('\n')[3].split('Test: divisible by ')[1])
-        test_true_monkey = int(monkey.split('\n')[4].split('If true: throw to monkey ')[1])
-        test_false_monkey = int(monkey.split('\n')[5].split('If false: throw to monkey ')[1])
+        divisble_by = int(monkey.split('\n')[3].split('Test: divisible by ')[1])
+        true_monkey = int(monkey.split('\n')[4].split('If true: throw to monkey ')[1])
+        false_monkey = int(monkey.split('\n')[5].split('If false: throw to monkey ')[1])
 
-        monkeys.append(Monkey(items, operation, test_divisble_by, test_true_monkey, test_false_monkey))
+        monkeys.append(Monkey(items, operation, divisble_by, true_monkey, false_monkey))
     return monkeys
 
 
