@@ -10,7 +10,7 @@ instructions = open('input.txt', 'r').read()\
                .replace('noop', 'addx 0')\
                .split('\n')
 
-x, = 1
+x = 1
 signal_strength, read_strength_at = 0, (20, 60, 100, 140, 180, 220)
 crt, crt_width = '', 40
 
